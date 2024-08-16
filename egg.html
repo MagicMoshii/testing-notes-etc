@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ch02-09 Egg Timer</title>
+    </head>
+    <body>
+        <h1>Egg Timer</h1>
+        <p>
+            <button onclick="doStartSoftTimer();">Cook Soft Egg</button>
+        </p>
+        <p>
+            <button onclick="doStartNormalTimer();">Cook Normal Egg</button>
+        </p>
+        <p>
+            <button onclick="doStartBulletTimer();">Cook Bullet Egg</button>
+        </p>
+        <script>
+            function doStartSoftTimer() {
+                setTimeout(doEndTimer,4*60*1000);
+            }
+
+            function doStartNormalTimer() {
+                setTimeout(doEndTimer,5*60*1000);
+            }
+
+            function doStartBulletTimer() {
+                setTimeout(doEndTimer,10*60*1000);
+            }
+
+            function doEndTimer() {
+                alert("Your egg is ready");
+            }
+        </script>
+    </body>
+</html>

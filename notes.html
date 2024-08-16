@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>This is a Page</title>
+</head>
+
+<body>    
+    <h2>Using Different Stuffs</h2>
+    <p> Just typing stuff</p>
+    <p style="color: darkolivegreen;"> Typing stuff in green</p>
+    <pre>
+    Typing things
+            in a very particular pattern
+                            regardless of how it will look on various devices
+    </pre>
+    <p> Typing things <em>and emphasising</em> words so that they look <strong>strong</strong> and <mark>stand out</mark> with different <u>features</u></p>
+    <p> and remembering to nest tags properly so that elements are contained properly and not overlapping into others</p>
+
+    <!-- Adding comments because I always gotta come back to stuff, and thoughts come with additional bonus thoughts -->
+
+    <p><img src="wtf.png" alt="Hand making the universal What The Fuck gesture"></p>
+    <p> This emote was provided by Bug</p>
+    <p><a href="https://x.com/home">This page</a> has been the source of many distractions</p>
+    <p>
+        <button onclick="doGdi()";>What's This</button>
+        <br>
+        <br>
+        <input type="text" id="alertInputText" value="">
+        <button onclick="doInputAlert();">What about this one?</button>
+
+    <script>
+        function doGdi() {
+            alert("It's a fucking button");
+        }
+
+        function doInputAlert() {
+            var element = document.getElementById("alertInputText");
+            alert(element.value)
+        }
+    </script>
+</body>
+
+</html>
