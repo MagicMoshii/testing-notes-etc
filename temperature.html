@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Celsius or Centigrade vs Eagle Units</title>
+    <link rel="stylesheet" href="stylethermo.css">
+</head>
+<body>
+    <h2>Converting between centigrade and Fahrenheit</h2>
+    <p>This will be fun</p>
+    <br>
+    <p> Temp in centigrade <input type="number" id="inputCentigrade" value 0><button onclick="calculateToFahrenheit()";>Convert to Fahrenheit</button></p>
+    <p> Temp in Fahrenheit <input type="number" id="inputFahrenheit" value 0><button onclick="calculateToCentigrade()";>Convert to centigrade</button></p>
+
+    <!-- so i'm thinking something along the lines of a function for each conversion direction.
+     fill details into input, click appropriate box and have the results come up below.
+     but can i have a Results share the end calculation or will i need to have Temp in C and Temp in F as separate things
+     
+     ALSO find a way to have some space between the input field and the button. looks squished and messy-->
+
+    <script>
+        function calculateToFahrenheit() {
+            var CentigradeElement = document.getElementById("inputCentigrade");
+            var inputCentigrade = CentigradeElement.value;
+            var CentToFahr = Number(inputCentigrade);
+
+            var TempInFahr = (CentToFahr*1.8)+32;
+            var resultStringFahr = TempInFahr.toFixed(1);
+
+            alert(resultStringFahr);
+        }
+
+        function calculateToCentigrade() {
+            var FahrenheitElement = document.getElementById("inputFahrenheit");
+            var inputFahrenheit = FahrenheitElement.value;
+            var FahrToCent = Number(inputFahrenheit);
+
+            var TempInCent = (FahrToCent-32)/1.8;
+            var resultStringCent = TempInCent.toFixed(1);
+
+            alert(resultStringCent);
+        }
+    
+
+    </script>
+
+    <!--doing for the sake of being done, but let's not have the result as an alert, but instead show up on the page somewhere
+    i'm just wanting this to be function before i polish it-->
