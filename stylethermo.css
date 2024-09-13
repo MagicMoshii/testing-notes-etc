@@ -3,3 +3,10 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
 }
+
+#resultParagraphF, #resultParagraphC {
+    color: brown;
+    display: inline-block;
+    margin-left: 30px;
+    
+}

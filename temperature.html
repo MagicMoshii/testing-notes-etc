@@ -6,16 +6,28 @@
 </head>
 <body>
     <h2>Converting between centigrade and Fahrenheit</h2>
-    <p>This will be fun</p>
+    <p>This will be <strong><u>fun</u></strong></p>
     <br>
-    <p> Temp in centigrade <input type="number" id="inputCentigrade" value 0><button onclick="calculateToFahrenheit()";>Convert to Fahrenheit</button></p>
-    <p> Temp in Fahrenheit <input type="number" id="inputFahrenheit" value 0><button onclick="calculateToCentigrade()";>Convert to centigrade</button></p>
+    <p> Temp in centigrade <input type="number" id="inputCentigrade" value 0>
+        <button onclick="calculateToFahrenheit()";>Convert to Fahrenheit</button>
+        <span id="resultParagraphF">Converted centigrade temperature will be displayed here</span>
+    </p>
+    <p> Temp in Fahrenheit <input type="number" id="inputFahrenheit" value 0>
+        <button onclick="calculateToCentigrade()";>Convert to centigrade</button>
+        <span id="resultParagraphC">Converted Fahrenheit temperature will be displayed here</span>
+    </p>
 
-    <!-- so i'm thinking something along the lines of a function for each conversion direction.
+
+    <!-- 1. so i'm thinking something along the lines of a function for each conversion direction.
      fill details into input, click appropriate box and have the results come up below.
      but can i have a Results share the end calculation or will i need to have Temp in C and Temp in F as separate things
      
-     ALSO find a way to have some space between the input field and the button. looks squished and messy-->
+     ALSO find a way to have some space between the input field and the button. looks squished and messy
+     
+     2. ok chat we brought the results onto the page (as separate things) and getting it looking tidy, but the future-problem to this is that i'm defining the space with pixels
+     it looks ok on my computer monitor but theoretically someone with a smaller monitor or a device would have display issues
+     i'm really winging it at this point, the activity was just to create a F to C calculator and at this point i'm about ready to say its finished because fml
+     just gonna make the text hurt my eyes a little less-->
 
     <script>
         function calculateToFahrenheit() {
@@ -26,7 +38,8 @@
             var TempInFahr = (CentToFahr*1.8)+32;
             var resultStringFahr = TempInFahr.toFixed(1);
 
-            alert(resultStringFahr);
+            var resultElement = document.getElementById("resultParagraphF");
+            resultElement.innerText = "Converted temperature is " + resultStringFahr + " F"
         }
 
         function calculateToCentigrade() {
@@ -37,11 +50,13 @@
             var TempInCent = (FahrToCent-32)/1.8;
             var resultStringCent = TempInCent.toFixed(1);
 
-            alert(resultStringCent);
+            var resultElement = document.getElementById("resultParagraphC");
+            resultElement.innerText = "Converted temperature is " + resultStringCent + " C"
         }
     
 
     </script>
 
-    <!--doing for the sake of being done, but let's not have the result as an alert, but instead show up on the page somewhere
-    i'm just wanting this to be function before i polish it-->
+    <!-- 1. doing for the sake of being done, but let's not have the result as an alert, but instead show up on the page somewhere
+    i'm just wanting this to be function before i polish it
+    2. to hell with the fancy o/degrees symbol idgaf-->
