@@ -22,7 +22,7 @@ p {
 }
 
 .gameStatus {
-    color: red;
+    color: rgb(65, 0, 0);
     font-size: 4em;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
