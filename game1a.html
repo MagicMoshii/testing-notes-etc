@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <!--attempt 2-->
+<head>
+    <title>Random Timer Game</title>
+    <link rel="stylesheet" href="stylegame1.css">
+</head>
+<body>
+    <h1>Nerves of Steel</h1>
+    <h1>Be the last payer to sit down and win.</h1>
+    <h2>Game Instructions</h2>
+    <p>All stand up and someone press Start to start the timer.</p>
+    <p>The timer will tick for between 5 and 20 seconds.</p>
+    <p>Sit down just before you think the timer will end.</p>
+    <p>Last player to sit down wins. Everyone else loses.</p>
+    <p>
+        <input type="button" value="START" onclick="doStartGame();" class="startButton">
+    </p>
+    <p id="statusParagraph"; class="gameStatus"></p>
+    <audio id="tickAudio">
+        <source src="tick-track.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="dingAudio">
+        <source src="bouncy-ding.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        
+        function doStartGame() {
+
+            //update status to "Ticking..."
+            var statusElement = document.getElementById("statusParagraph");
+            statusElement.innerText = "Ticking....";
+
+            //play ticking sound from beginning
+            tickSoundElement = document.getElementById("tickAudio");
+            tickSoundElement.currentTime = 0;
+            tickSoundElement.play();
+
+            //calculate delay 5-15secs
+            var delayInSeconds = Math.floor(Math.random() * 15)+5;
+
+            //timeout for delay
+            setTimeout(onGameTimeOut, delayInSeconds * 1000);
+
+        }
+
+        function onGameTimeOut() {
+
+            //stop ticking
+            tickSoundElement = document.getElementById("tickAudio");
+            tickSoundElement.pause();
+
+            //play ding
+            dingSoundElement = document.getElementById("dingAudio");
+            dingSoundElement.currentTime = 0
+            dingSoundElement.play();
+
+            //clear status display
+            var statusElement = document.getElementById("statusParagraph");
+            statusElement.innerText = "";
+        }
+
+    </script>
+</body>
+</html>
